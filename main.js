@@ -10,7 +10,7 @@
 	var bounds = new google.maps.LatLngBounds();
 	var stopsLayer = new google.maps.Data({map: map});
 
-	stopsLayer.loadGeoJson('/mutawintji-geotrail-stops.geojson', null, function () {
+	stopsLayer.loadGeoJson('https://gsnsw-philn.github.io/geotrails/mutawintji-geotrail-stops.geojson', null, function () {
 		stopsLayer.addListener('click', function (event) {
 			console.log(event.feature.getProperty('name'))
 			infowindow.setContent(`<h3>` + event.feature.getProperty('name') + '</h3>' + event.feature.getProperty('description'));
@@ -31,5 +31,5 @@
 		map.fitBounds(bounds);
 
 	});
-	map.data.loadGeoJson('/mutawintji-geotrail.geojson');
+	map.data.loadGeoJson('https://gsnsw-philn.github.io/geotrails/mutawintji-geotrail.geojson');
 })();
